@@ -1,0 +1,59 @@
+{
+  "private": true,
+  "name": "test-cov",
+  "version": "0.0.1",
+  "main": "dist/server.js",
+  "type": "module",
+  "license": "Unlicense",
+  "scripts": {
+    "test:coverage": "c8 ava --timeout=360s"
+  },
+  "dependencies": {
+    "fastify": "^4.4.0",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.1",
+    "ava": "^4.3.1",
+    "c8": "^7.12.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "ava": {
+    "files": [
+      "src/**/*.spec.ts",
+      "tests/**/*.spec.ts"
+    ],
+    "ignoredByWatcher": [
+      "data",
+      "assets"
+    ],
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
+  },
+  "c8": {
+    "all": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "report-dir": "./coverage",
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "**/*.spec.ts",
+      "src/server.ts"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  }
+}
