@@ -1,0 +1,36 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Test
+
+on:
+  push:
+    branches: [ "**" ]
+
+jobs:
+  test:
+    name: Tesdt
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout 
+      uses: actions/checkout@v3
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+        registry-url: 'https://registry.yarnpkg.com'
+        cache: 'yarn'
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile --production=false
+    - name: Run Test
+      run: yarn test:coverage
+    - name: Coverage zgosalvez
+      # https://github.com/marketplace/actions/report-lcov
+      uses: zgosalvez/github-actions-report-lcov@v1
+      if: github.event_name == 'pull_request'
+      with:
+        coverage-files: coverage/lcov.*.info
+        minimum-coverage: 90
+        artifact-name: code-coverage-report
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: src
