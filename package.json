@@ -41,8 +41,10 @@
   "c8": {
     "all": true,
     "reporter": [
-      "lcov",
-      "text"
+      "html",
+      "lcovonly",
+      "text",
+      "json-summary"
     ],
     "report-dir": "./coverage",
     "include": [
