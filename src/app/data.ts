@@ -1,4 +1,5 @@
 export const createData2 = () => {
+  // add comment
   const data = {
     a: 1,
     b: 2,

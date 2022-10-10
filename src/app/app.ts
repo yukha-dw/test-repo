@@ -5,6 +5,7 @@ import { createData as cD3, createData2 as cD32 } from "./data3.js";
 import { createData as cD4, createData2 as cD42 } from "./data4.js";
 
 export const createApp = () => {
+  // add comment
   const app = fastify();
   const data1 = cD1();
   const data2 = cD2();
