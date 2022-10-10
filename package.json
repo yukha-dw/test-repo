@@ -42,7 +42,6 @@
     "all": true,
     "reporter": [
       "html",
-      "lcovonly",
       "text",
       "json-summary"
     ],
