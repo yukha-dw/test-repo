@@ -1,7 +1,8 @@
 import fastify from "fastify";
 import { createData as cD1, createData2 as cD12 } from "./data.js";
 import { createData as cD2, createData2 as cD22 } from "./data2.js";
-import { createData as cD3, createData2 as cD32 } from "./data3.js";
+import { createData2 as cD32 } from "./data3.js";
+// import { createData as cD3, createData2 as cD32 } from "./data3.js";
 import { createData as cD4 } from "./data4.js";
 // import { createData as cD4, createData2 as cD42 } from "./data4.js";
 
@@ -9,11 +10,11 @@ export const createApp = () => {
   const app = fastify();
   const data1 = cD1();
   const data2 = cD2();
-  const data3 = cD3();
+  // const data3 = cD3();
   const data4 = cD4();
   app.decorate("data1", data1);
   app.decorate("data2", data2);
-  app.decorate("data3", data3);
+  // app.decorate("data3", data3);
   app.decorate("data4", data4);
 
   const data12 = cD12();
