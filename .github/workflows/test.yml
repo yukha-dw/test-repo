@@ -37,7 +37,7 @@ jobs:
       if: github.event_name == 'pull_request' && (success() || failure())
       with:
         coverage_file: "coverage/coverage-summary.json"
-        comment_template_file: "comment-template.md"
+        comment_template_file: ".github/comment-template.md"
         comment_mode: "replace"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         sources_base_path: ${{ format('{0}/', github.workspace) }}
