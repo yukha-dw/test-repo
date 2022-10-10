@@ -33,5 +33,5 @@ _test("test4", async (t) => {
     c: 2,
   }
 
-  t.deepEqual((app1 as any).data1, dataFail);
+  t.notDeepEqual((app1 as any).data1, dataFail);
 });
