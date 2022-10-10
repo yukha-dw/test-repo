@@ -7,7 +7,7 @@ export const createData2 = () => {
   return data;
 };
 
-export const createData1 = () => {
+export const createData = () => {
   const data = {
     a: 1,
     b: 2,
