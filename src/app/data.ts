@@ -1,4 +1,4 @@
-export const createData = () => {
+export const createData2 = () => {
   const data = {
     a: 1,
     b: 2,
@@ -7,7 +7,7 @@ export const createData = () => {
   return data;
 };
 
-export const createData2 = () => {
+export const createData1 = () => {
   const data = {
     a: 1,
     b: 2,
