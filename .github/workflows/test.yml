@@ -31,7 +31,7 @@ jobs:
       run: yarn install --frozen-lockfile --production=false
     - name: Run Test
       run: yarn test:coverage
-    - name: Comment Coverage
+    - name: Report Coverage
       uses: sidx1024/report-nyc-coverage-github-action@v1.2.6
       # https://github.com/marketplace/actions/report-nyc-coverage
       if: github.event_name == 'pull_request' && (success() || failure())
@@ -42,10 +42,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         sources_base_path: ${{ format('{0}/', github.workspace) }}
         files_coverage_table_output_type_order: "SBFL"
-    - name: Check Coverage
-      uses: terencetcf/github-actions-lcov-minimum-coverage-checker@v1.4.1
-      # https://github.com/marketplace/actions/lcov-minimum-test-coverage-checker
-      if: success() || failure()
-      with:
-        coverage-file: coverage/lcov.info
-        minimum-coverage: 95
