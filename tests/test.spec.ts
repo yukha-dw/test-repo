@@ -1,5 +1,5 @@
 import _test from "ava";
-import { createData, createData2 } from "src/app/data.js";
+import { createData, createData2 } from "../src/app/data.js";
 import { createApp } from "../src/app/app.js";
 
 _test("test1", async (t) => {
