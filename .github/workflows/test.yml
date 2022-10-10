@@ -56,7 +56,7 @@ jobs:
         # Template file to be used for GitHub PR comment. Markdown and Svelte are
         # supported.
         # Default: comment-template.md
-        # comment_template_file: ""
+        comment_template_file: "comment-template.md"
 
         # "replace" or "new"
         # Default: replace
