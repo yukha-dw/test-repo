@@ -5,9 +5,14 @@ name: Test
 
 on:
   push:
-    branches: [ "**" ]
+    branches:
+      - "**"
   pull_request:
-    branches: [ "**" ]
+    branches:
+      - "**"
+    types:
+      - "opened"
+      - "synchronize"
 
 jobs:
   test:
@@ -35,4 +40,4 @@ jobs:
         minimum-coverage: 90
         artifact-name: code-coverage-report
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        working-directory: src
+        working-directory: ./
