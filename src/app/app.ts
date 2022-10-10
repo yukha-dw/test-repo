@@ -23,5 +23,22 @@ export const createApp = () => {
   app.decorate("data22", data22);
   app.decorate("data32", data32);
   app.decorate("data42", data42);
+
+  if (data1 !== data12) {
+    const integer = 1;
+    const integer2 = 2;
+    let integer3 = integer + integer2;
+    integer3 *= 3;
+    console.log(integer3);
+    app.decorate("integer3", integer3);
+  } else {
+    const integer = 4;
+    const integer2 = 5;
+    let integer3 = integer + integer2;
+    integer3 *= 6;
+    console.log(integer3);
+    app.decorate("integer3", integer3);
+  }
+
   return app;
 };

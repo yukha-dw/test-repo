@@ -35,3 +35,9 @@ _test("test4", async (t) => {
 
   t.notDeepEqual((app1 as any).data1, dataFail);
 });
+
+_test("test5", async (t) => {
+  const app1 = createApp();
+
+  t.assert(typeof (app1 as any).integer3 === 'number');
+});
