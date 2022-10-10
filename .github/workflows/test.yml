@@ -32,7 +32,7 @@ jobs:
     - name: Run Test
       run: yarn test:coverage
     - name: Report Coverage
-      uses: yukha-dw/report-nyc-coverage-github-action@v1.2.6
+      uses: yukha-dw/report-nyc-coverage-github-action@v1.2.7
       # https://github.com/marketplace/actions/report-nyc-coverage
       if: github.event_name == 'pull_request' && (success() || failure())
       with:
