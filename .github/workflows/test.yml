@@ -34,6 +34,7 @@ jobs:
     - name: Comment Coverage
       uses: sidx1024/report-nyc-coverage-github-action@v1.2.6
       # https://github.com/marketplace/actions/report-nyc-coverage
+      if: github.event_name == 'pull_request'
       with:
         coverage_file: "coverage/coverage-summary.json"
         comment_template_file: "comment-template.md"
