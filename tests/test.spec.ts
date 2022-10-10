@@ -24,3 +24,14 @@ _test("test3", async (t) => {
   t.deepEqual((app1 as any).data3, (app2 as any).data32);
   t.deepEqual((app1 as any).data4, (app2 as any).data42);
 });
+
+_test("test4", async (t) => {
+  const app1 = createApp();
+  const dataFail = {
+    a: 2,
+    b: 2,
+    c: 2,
+  }
+
+  t.deepEqual((app1 as any).data1, dataFail);
+});

@@ -2,6 +2,7 @@
 
 Commit: [{{short_commit_sha}}]({{commit_link}})
 Base: [{{base_ref}}@{{base_short_commit_sha}}]({{base_commit_link}})
+Minimum Lines Coverage: **95%**
 
 | Type                      | This PR                               |
 |---------------------------|---------------------------------------|
@@ -14,3 +15,5 @@ Base: [{{base_ref}}@{{base_short_commit_sha}}]({{base_commit_link}})
 <summary>Details (all files)</summary>
 {{files_coverage_table}}
 </details>
+
+Note: To see uncovered lines, please open Place Unit & Integration Test Workflow
