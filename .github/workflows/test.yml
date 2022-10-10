@@ -31,6 +31,10 @@ jobs:
       run: yarn install --frozen-lockfile --production=false
     - name: Run Test
       run: yarn test:coverage
+    - name: Check Dir
+      run: ls -lah
+    - name: Check Coverage
+      run: ls coverage -lah
     - name: Coverage zgosalvez
       # https://github.com/marketplace/actions/report-lcov
       uses: zgosalvez/github-actions-report-lcov@v1
