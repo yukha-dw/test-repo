@@ -34,7 +34,7 @@ jobs:
     - name: Comment Coverage
       uses: sidx1024/report-nyc-coverage-github-action@v1.2.6
       # https://github.com/marketplace/actions/report-nyc-coverage
-      if: github.event_name == 'pull_request'
+      if: github.event_name == 'pull_request' && (success() || failure())
       with:
         coverage_file: "coverage/coverage-summary.json"
         comment_template_file: "comment-template.md"
@@ -45,6 +45,7 @@ jobs:
     - name: Check Coverage
       uses: terencetcf/github-actions-lcov-minimum-coverage-checker@v1.4.1
       # https://github.com/marketplace/actions/lcov-minimum-test-coverage-checker
+      if: success() || failure()
       with:
         coverage-file: coverage/lcov.info
         minimum-coverage: 95
