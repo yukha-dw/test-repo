@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "fastify": "^4.8.1",
+    "fastify-csrf": "3.0.1",
     "fluent-json-schema": "3.1.0",
     "got": "11.8.5",
     "tsd": "0.23.0",
