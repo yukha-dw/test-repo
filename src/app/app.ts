@@ -3,6 +3,7 @@ import { createData as cD1, createData2 as cD12 } from "./data.js";
 import { createData as cD2, createData2 as cD22 } from "./data2.js";
 import { createData as cD3, createData2 as cD32 } from "./data3.js";
 import { createData as cD4, createData2 as cD42 } from "./data4.js";
+import tsd from "tsd";
 
 // add comment
 
@@ -41,6 +42,10 @@ export const createApp = () => {
     integer3 *= 6;
     console.log(integer3);
     app.decorate("integer3", integer3);
+    const ptsd = tsd();
+    if (typeof ptsd === 'string') {
+      console.log('ptsd string');
+    }
   }
 
   let lineSpammer = 1;
