@@ -6,7 +6,7 @@
   "type": "module",
   "license": "Unlicense",
   "scripts": {
-    "test:coverage": "c8 ava --timeout=360s"
+    "test:coverage": "c8 --check-coverage --lines=95 ava --timeout=360s"
   },
   "dependencies": {
     "fastify": "^4.4.0",
@@ -41,8 +41,9 @@
   "c8": {
     "all": true,
     "reporter": [
-      "lcov",
-      "text"
+      "html",
+      "text",
+      "json-summary"
     ],
     "report-dir": "./coverage",
     "include": [

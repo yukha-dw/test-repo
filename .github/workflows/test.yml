@@ -5,11 +5,18 @@ name: Test
 
 on:
   push:
-    branches: [ "**" ]
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+    types:
+      - "opened"
+      - "synchronize"
 
 jobs:
   test:
-    name: Tesdt
+    name: Test
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout 
@@ -24,13 +31,14 @@ jobs:
       run: yarn install --frozen-lockfile --production=false
     - name: Run Test
       run: yarn test:coverage
-    - name: Coverage zgosalvez
-      # https://github.com/marketplace/actions/report-lcov
-      uses: zgosalvez/github-actions-report-lcov@v1
-      if: github.event_name == 'pull_request'
+    - name: Report Coverage
+      uses: yukha-dw/report-nyc-coverage-github-action@v1.2.7
+      # https://github.com/marketplace/actions/report-nyc-coverage
+      if: github.event_name == 'pull_request' && (success() || failure())
       with:
-        coverage-files: coverage/lcov.*.info
-        minimum-coverage: 90
-        artifact-name: code-coverage-report
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        working-directory: src
+        coverage_file: "coverage/coverage-summary.json"
+        comment_template_file: ".github/comment-template.md"
+        comment_mode: "replace"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        sources_base_path: ${{ format('{0}/', github.workspace) }}
+        files_coverage_table_output_type_order: "SBFL"
