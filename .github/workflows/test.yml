@@ -15,8 +15,6 @@ on:
       - "synchronize"
 
 permissions:
-  checks: read
-  contents: read
   pull-requests: write
 
 jobs:
