@@ -15,8 +15,7 @@ on:
       - "synchronize"
 
 permissions:
-  # All other permissions are set to none
-  checks: write
+  checks: read
   contents: read
   pull-requests: write
 
