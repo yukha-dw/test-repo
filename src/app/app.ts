@@ -404,6 +404,8 @@ export const createApp = () => {
   lineSpammer += 1;
   lineSpammer += 1;
   lineSpammer += 1;
+  lineSpammer += 1;
+  lineSpammer += 1;
 
   app.decorate("lineSpammer", lineSpammer);
 
