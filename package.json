@@ -9,7 +9,7 @@
     "test:coverage": "c8 --check-coverage --lines=95 ava --timeout=360s"
   },
   "dependencies": {
-    "fastify": "^4.4.0",
+    "fastify": "^4.8.1",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
