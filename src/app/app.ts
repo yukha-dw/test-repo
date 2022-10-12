@@ -45,6 +45,7 @@ export const createApp = () => {
     const ptsd = tsd();
     if (typeof ptsd === 'string') {
       console.log('ptsd string');
+      console.log('ptsd string');
     }
   }
 
