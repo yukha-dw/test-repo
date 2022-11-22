@@ -45,11 +45,14 @@ export const createApp = () => {
     const ptsd = tsd();
     if (typeof ptsd === 'string') {
       console.log('ptsd string');
+      console.log('ptsd string');
       console.log('not ptsd string, normal string');
     }
   }
 
   let lineSpammer = 1;
+  lineSpammer += 1;
+  lineSpammer += 1;
   lineSpammer += 1;
   lineSpammer += 1;
   lineSpammer += 1;
