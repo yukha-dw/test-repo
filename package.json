@@ -9,7 +9,7 @@
     "test:coverage": "c8 --check-coverage --lines=95 ava --timeout=360s"
   },
   "dependencies": {
-    "fastify": "^4.8.1",
+    "fastify": "^4.10.2",
     "fastify-csrf": "^3.1.0",
     "fluent-json-schema": "^3.1.0",
     "got": "^11.8.5",
