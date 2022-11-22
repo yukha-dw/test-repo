@@ -46,6 +46,7 @@ export const createApp = () => {
     if (typeof ptsd === 'string') {
       console.log('ptsd string');
       console.log('ptsd string');
+      console.log('not ptsd string, normal string');
     }
   }
 
