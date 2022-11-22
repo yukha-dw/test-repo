@@ -37,7 +37,7 @@ jobs:
     - name: Report Coverage
       uses: yukha-dw/report-nyc-coverage-github-action@v1.2.7
       # https://github.com/marketplace/actions/report-nyc-coverage
-      if: github.event_name == 'pull_request' && (success() || failure())
+      if: github.actor != 'dependabot[bot]' && github.event_name == 'pull_request' && (success() || failure())
       with:
         coverage_file: "coverage/coverage-summary.json"
         comment_template_file: ".github/comment-template.md"
